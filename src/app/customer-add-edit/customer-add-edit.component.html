@@ -1,0 +1,54 @@
+<div mat-dialog-title>
+    <h1>Customer Form</h1>
+</div>
+<form [formGroup]="customerForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Full Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Tom Cruis." formControlName="fullName" >
+            </mat-form-field>
+        </div>
+
+
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Date of birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dob">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Ex. test@gmail.com" formControlName="email">
+                <mat-error *ngIf="customerForm.get('email')?.hasError('email')">
+                    Please enter a valid email address.
+                  </mat-error>
+            </mat-form-field>
+        </div>
+
+        
+        
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Address</mat-label>
+                <input matInput type="text" placeholder="Ex. sm Street." formControlName="address">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Contact</mat-label>
+                <input matInput type="text" placeholder="Ex. 556754534" formControlName="contact">
+                <mat-error *ngIf="customerForm.get('contact')?.hasError('pattern')">
+                    Contact must be a number.
+                  </mat-error>
+            </mat-form-field>
+        </div>
+        
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+    </div>
+</form>

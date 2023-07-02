@@ -1,0 +1,36 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "fullName": "james john",
+      "dob": "1991-06-03T18:30:00.000Z",
+      "email": "james@gmail.com",
+      "address": "wood street",
+      "contact": "553435"
+    },
+    {
+      "id": 2,
+      "fullName": "phoebe",
+      "dob": "1992-03-03T18:30:00.000Z",
+      "email": "phoebe12@gmail.com",
+      "address": "Newyork city",
+      "contact": "123124324"
+    },
+    {
+      "id": 3,
+      "fullName": "Mathew philip",
+      "dob": "1983-01-02T18:30:00.000Z",
+      "email": "mathew@example.com",
+      "address": "123 lakeshore",
+      "contact": "234324"
+    },
+    {
+      "id": 4,
+      "fullName": "John paul",
+      "dob": "1974-02-28T18:30:00.000Z",
+      "email": "paul23@example.com",
+      "address": "45 oakway, california",
+      "contact": "1432423"
+    }
+  ]
+}
